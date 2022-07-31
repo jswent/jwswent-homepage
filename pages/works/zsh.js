@@ -37,6 +37,7 @@ const Work = () => {
           </ListItem>
         </List>
 
+          <WorkImage />
         {/*<WorkImage src="/images/works/zsh_01.png" alt="ZSH" />*/}
       </Container>
     </Layout>
