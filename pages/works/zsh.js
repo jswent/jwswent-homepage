@@ -1,4 +1,14 @@
-import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
+import {
+  Container,
+  Badge,
+  Box,
+  Link,
+  List,
+  ListItem,
+  Heading,
+  Code,
+  useColorModeValue
+} from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -37,8 +47,33 @@ const Work = () => {
           </ListItem>
         </List>
 
-          <WorkImage />
+        <WorkImage />
         {/*<WorkImage src="/images/works/zsh_01.png" alt="ZSH" />*/}
+
+        <Heading as='h3' variant='section-title'>
+          Installation
+        </Heading>
+        <P>
+          To easily install this config you can run the installation script
+          through the following command. You can also install manually.
+        </P>
+        <Box p='2' opacity='0' />
+        <Box
+          sx={{
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            }
+          }}
+          borderRadius='lg'
+          bg={useColorModeValue('codeLight', 'codeDark')}
+          overflowX='scroll'
+        >
+          <Code m='4px' display='block' whiteSpace='pre' bg='transparent'>
+            zsh -c &quot;$(curl -fsSL
+            https://raw.githubusercontent.com/jswent/zsh/main/install.zsh)&quot;
+          </Code>
+        </Box>
+        <Box p='2' opacity='0' />
       </Container>
     </Layout>
   )
