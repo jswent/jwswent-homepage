@@ -33,6 +33,10 @@ const Post = () => {
         </P>
         <List ml={4} my={4}>
           <ListItem>
+            <Meta>Date</Meta>
+            <span>July 31, 2022</span>
+          </ListItem>
+          <ListItem>
             <Meta>README</Meta>
             <Link href='https://github.com/jswent/zsh/blob/main/README.md'>
               GitHub <ExternalLinkIcon mx='2px' />
