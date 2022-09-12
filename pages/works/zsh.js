@@ -5,14 +5,13 @@ import {
   Link,
   List,
   ListItem,
-  Heading,
-  Code,
-  useColorModeValue
+  Heading
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import CodeBlock from '../../components/code'
 
 const Work = () => {
   return (
@@ -58,21 +57,10 @@ const Work = () => {
           through the following command. You can also install manually.
         </P>
         <Box p='2' opacity='0' />
-        <Box
-          sx={{
-            '&::-webkit-scrollbar': {
-              display: 'none'
-            }
-          }}
-          borderRadius='lg'
-          bg={useColorModeValue('codeLight', 'codeDark')}
-          overflowX='scroll'
-        >
-          <Code m='4px' display='block' whiteSpace='pre' bg='transparent'>
-            zsh -c &quot;$(curl -fsSL
-            https://raw.githubusercontent.com/jswent/zsh/main/install.zsh)&quot;
-          </Code>
-        </Box>
+        <CodeBlock>
+          zsh -c &quot;$(curl -fsSL
+          https://raw.githubusercontent.com/jswent/zsh/main/install.zsh)&quot;
+        </CodeBlock>
         <Box p='2' opacity='0' />
       </Container>
     </Layout>
