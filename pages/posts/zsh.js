@@ -6,15 +6,14 @@ import {
   ListItem,
   Heading,
   Box,
-  Code,
-  Text,
-  useColorModeValue
+  Text
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/post'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 import Section from '../../components/section'
+import CodeBlock from '../../components/code'
 
 const Post = () => {
   return (
@@ -99,22 +98,16 @@ const Post = () => {
           <Box p='1' opacity='0' />
           <Meta>~/.zshrc</Meta>
           <Box p='1' opacity='0' />
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('codeLight', 'codeDark')}
-            overflowX='scroll'
-          >
-            <Code display='block' whiteSpace='pre' bg='transparent'>
-              <p>
-                ## Load colors <br />
-                autoload -U colors && colors <br />
-                <br />
-                ## Enable colored output <br />
-                export CLICOLOR=1 <br />
-                export LSCOLORS=ExFxBxDxCxegedabagacad <br />
-              </p>
-            </Code>
-          </Box>
+          <CodeBlock>
+            <p>
+              ## Load colors <br />
+              autoload -U colors && colors <br />
+              <br />
+              ## Enable colored output <br />
+              export CLICOLOR=1 <br />
+              export LSCOLORS=ExFxBxDxCxegedabagacad <br />
+            </p>
+          </CodeBlock>
           <Box p='2' opacity='0' />
           <P>
             To utilize colored output on command-line applications, some systems
@@ -126,43 +119,31 @@ const Post = () => {
           <Box p='1' opacity='0' />
           <Meta>~/.zsh/aliases</Meta>
           <Box p='1' opacity='0' />
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('codeLight', 'codeDark')}
-            overflowX='scroll'
-          >
-            <Code display='block' whiteSpace='pre' bg='transparent'>
-              <Text># Colorful ZSH</Text>
-              <Text>if [ -x /usr/bin/dircolors ]; then</Text>
-              <Text>
-                {'  '}
-                test -r ~/.dircolors && eval &quot;$dircolors -n
-                ~/.dircolors&quot; || eval &quot;$(dircolors -b)&quot;
-              </Text>
-              <Text>{'  '}alias dir=&apos;dir --color=auto&apos;</Text>
-              <Text>
-                {'  '}alias ls=&apos;ls --color=auto&apos; #do not include if
-                using exa
-              </Text>
-              <Text>{'  '}alias grep=&apos;grep --color=auto&apos;</Text>
-              <Text>fi</Text>
-            </Code>
-          </Box>
+          <CodeBlock>
+            <Text># Colorful ZSH</Text>
+            <Text>if [ -x /usr/bin/dircolors ]; then</Text>
+            <Text>
+              {'  '}
+              test -r ~/.dircolors && eval &quot;$dircolors -n
+              ~/.dircolors&quot; || eval &quot;$(dircolors -b)&quot;
+            </Text>
+            <Text>{'  '}alias dir=&apos;dir --color=auto&apos;</Text>
+            <Text>
+              {'  '}alias ls=&apos;ls --color=auto&apos; #do not include if
+              using exa
+            </Text>
+            <Text>{'  '}alias grep=&apos;grep --color=auto&apos;</Text>
+            <Text>fi</Text>
+          </CodeBlock>
           <Box p='1' opacity='0' />
           <P>Now make sure to source the file from your .zshrc</P>
           <Box p='1' opacity='0' />
           <Meta>~/.zshrc</Meta>
           <Box p='1' opacity='0' />
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('codeLight', 'codeDark')}
-            overflowX='scroll'
-          >
-            <Code display='block' whiteSpace='pre' bg='transparent'>
-              <Text># source aliases</Text>
-              <Text>source $ZSH/aliases</Text>
-            </Code>
-          </Box>
+          <CodeBlock>
+            <Text># source aliases</Text>
+            <Text>source $ZSH/aliases</Text>
+          </CodeBlock>
         </Section>
 
         <Box p='2' opacity='0' />
@@ -180,30 +161,24 @@ const Post = () => {
           <Box p='1' opacity='0' />
           <Meta>~/.zshrc</Meta>
           <Box p='1' opacity='0' />
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('codeLight', 'codeDark')}
-            overflowX='scroll'
-          >
-            <Code display='block' whiteSpace='pre' bg='transparent'>
-              <p>
-                ## ZSH HISTORY export
-                <br />
-                HISTFILE=$ZSH/.zsh_history
-                <br />
-                export HISTSIZE=100000000
-                <br />
-                export SAVEHIST=100000000
-                <br />
-                setopt appendhistory
-                <br />
-                setopt HIST_IGNORE_ALL_DUPS
-                <br />
-                setopt HIST_FIND_NO_DUPS
-                <br />
-              </p>
-            </Code>
-          </Box>
+          <CodeBlock>
+            <p>
+              ## ZSH HISTORY export
+              <br />
+              HISTFILE=$ZSH/.zsh_history
+              <br />
+              export HISTSIZE=100000000
+              <br />
+              export SAVEHIST=100000000
+              <br />
+              setopt appendhistory
+              <br />
+              setopt HIST_IGNORE_ALL_DUPS
+              <br />
+              setopt HIST_FIND_NO_DUPS
+              <br />
+            </p>
+          </CodeBlock>
           <Box p='2' opacity='0' />
         </Section>
 
@@ -231,23 +206,17 @@ const Post = () => {
           <Box p='1' opacity='0' />
           <Meta>~/.zshrc</Meta>
           <Box p='1' opacity='0' />
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('codeLight', 'codeDark')}
-            overflowX='scroll'
-          >
-            <Code display='block' whiteSpace='pre' bg='transparent'>
-              <p>
-                # Source plugins <br />
-                source
-                &apos;$ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh&apos;{' '}
-                <br />
-                source
-                &apos;$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&apos;{' '}
-                <br />
-              </p>
-            </Code>
-          </Box>
+          <CodeBlock>
+            <p>
+              # Source plugins <br />
+              source
+              &apos;$ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh&apos;{' '}
+              <br />
+              source
+              &apos;$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&apos;{' '}
+              <br />
+            </p>
+          </CodeBlock>
           <Box p='2' opacity='0' />
           <P>And your new shell should look like this:</P>
           <WorkImage src='/images/posts/zsh/zshPluginTest.png' />
