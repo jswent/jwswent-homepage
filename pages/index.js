@@ -30,8 +30,8 @@ const Page = () => {
             </Heading>
 
             <p>
-              Finance and Computer Science student at the University of St.
-              Andrews in Scotland
+              Research Assistant and Computer Science student at the University
+              of St. Andrews in Scotland
             </p>
           </Box>
           <Box
@@ -77,6 +77,28 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as='h3' variant='section-title'>
+            Business
+          </Heading>
+          <Paragraph>
+            James is also the founder of Swent Consulting, a web design and IT
+            consulting agency that offers tailored services to primarily small
+            businesses and charitable organizations. This agency is focused on
+            making high-quality, modern web services and IT infrastructure
+            available for affordable prices. Click the button below to explore
+            the Swent Consulting website and reach out to get a personalized
+            quote in less than 24 hours.
+          </Paragraph>
+          <Box align='center' my={4}>
+            <NextLink href='https://www.swent-consulting.com'>
+              <Button rightIcon={<ChevronRightIcon />} colorScheme='teal'>
+                Swent Consulting
+              </Button>
+            </NextLink>
+          </Box>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as='h3' variant='section-title'>
             Bio
           </Heading>
           <BioSection>
@@ -93,12 +115,17 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2021 to present</BioYear>
-            Studying Finance and Computer Science at the University of St.
-            Andrews in Scotland
+            Studying Computer Science at the University of St. Andrews in
+            Scotland
+          </BioSection>
+          <BioSection>
+            <BioYear>2022 to present</BioYear>
+            Started research project in epidemic modelling with transfer
+            learning at the University of St. Andrews
           </BioSection>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.4}>
           <Heading as='h3' variant='section-title'>
             Social Media
           </Heading>
@@ -145,7 +172,7 @@ const Page = () => {
           </List>
         </Section>
 
-        <Section delay={0.4}>
+        <Section delay={0.5}>
           <Box
             borderRadius='lg'
             bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
