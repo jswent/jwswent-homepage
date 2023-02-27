@@ -9,7 +9,6 @@ import {
   ListItem,
   Link,
   Icon,
-  useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Section from '../components/section'
@@ -29,10 +28,9 @@ const Page = () => {
               James Swent
             </Heading>
 
-            <p>
-              Research Assistant and Computer Science student at the University
-              of St. Andrews in Scotland
-            </p>
+            <Heading as='h3' size='md'>
+              VP Engineering at Learnsight
+            </Heading>
           </Box>
           <Box
             flexShrink={0}
@@ -58,13 +56,13 @@ const Page = () => {
             Work
           </Heading>
           <Paragraph>
-            James is currently a second-year at the University of St. Andrews
-            and Research Intern at Transocean Ltd, with a passion for Computer
-            Science, Open-Source software, and anything tech-related. He also
-            does freelance software and web development, enjoying the process of
-            solving real-life problems with code. James is also a foremost
-            proponent of the data revolution, with experience designing and
-            implementing relational databases on an enterprise scale.
+            I&apos;m currently working full-time as VP of Engineering at&nbsp;
+            <Link href='https://www.learnsight.io'>Learnsight</Link>, a startup
+            in the MIT Sandbox program. I&apos;m also a second-year at the
+            University of St. Andrews. I get excited about Computer Science,
+            Open-Source software, and anything tech-related. I&apos;m passionate
+            about building new ventures, exploring entrepreneurship, and
+            leveraging my tech insights to enhance legacy industries.
           </Paragraph>
           <Box align='center' my={4}>
             <NextLink href='https://github.com/jswent'>
@@ -77,10 +75,10 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as='h3' variant='section-title'>
-            Business
+            Consulting
           </Heading>
           <Paragraph>
-            James is also the founder of Swent Consulting, a web design and IT
+            I&apos;m also the founder of Swent Consulting, a web design and IT
             consulting agency that offers tailored services to primarily small
             businesses and charitable organizations. This agency is focused on
             making high-quality, modern web services and IT infrastructure
@@ -110,8 +108,8 @@ const Page = () => {
             Graduated High School at Thayer Academy in Braintree, Massachusetts
           </BioSection>
           <BioSection>
-            <BioYear>2021 to present</BioYear>
-            Started internship at Transocean Ltd.
+            <BioYear>2021 to 2022</BioYear>
+            Internship at Transocean Ltd.
           </BioSection>
           <BioSection>
             <BioYear>2021 to present</BioYear>
@@ -119,9 +117,17 @@ const Page = () => {
             Scotland
           </BioSection>
           <BioSection>
+            <BioYear>2022 to 2022</BioYear>
+            Research project in epidemic modelling with transfer learning at the
+            University of St. Andrews
+          </BioSection>
+          <BioSection>
             <BioYear>2022 to present</BioYear>
-            Started research project in epidemic modelling with transfer
-            learning at the University of St. Andrews
+            Founded Swent Consulting
+          </BioSection>
+          <BioSection>
+            <BioYear>2023 to present</BioYear>
+            VP Engineering at Learnsight
           </BioSection>
         </Section>
 
@@ -170,24 +176,6 @@ const Page = () => {
               </Link>
             </ListItem>
           </List>
-        </Section>
-
-        <Section delay={0.5}>
-          <Box
-            borderRadius='lg'
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-            p={3}
-            mb={6}
-            align='center'
-          >
-            This website was built to familiarize myself with React.js, Next.js,
-            Chakra UI, and framer-motion, following Takuya Matsuyama&apos;s{' '}
-            <Link href='https://www.youtube.com/watch?v=bSMZgXzC9AA'>
-              How to build a portfolio website using Next.js, Chakra UI, Framer
-              Motion, and Three.js
-            </Link>
-            .
-          </Box>
         </Section>
       </Container>
     </Layout>
