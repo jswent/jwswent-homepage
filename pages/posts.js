@@ -4,6 +4,8 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 
 import thumbZSH from '../public/images/works/zsh_eyecatch.png'
+import thumbTailwind from '../public/images/posts/tailwind-setup/tailwind_thumb.jpg'
+import thumbChatGPT from '../public/images/posts/chatgpt-1/ChatGPT_logo.png'
 
 const Posts = () => (
   <Layout title='Posts'>
@@ -13,6 +15,16 @@ const Posts = () => (
       </Heading>
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <PostGridItem 
+            id='chatgpt-1'
+            title='Why Everyone is Talking About ChatGPT'
+            thumbnail={thumbChatGPT}
+          />
+          <PostGridItem 
+            id='tailwind-setup'
+            title='How to set up TailwindCSS with React + Next.js'
+            thumbnail={thumbTailwind}
+          />
           <PostGridItem
             id='zsh'
             title='How To Configure ZSH From Scratch'
