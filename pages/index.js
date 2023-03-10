@@ -16,10 +16,12 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
+import TimedModal from '../components/timedmodal'
 
 const Page = () => {
   return (
     <Layout>
+      <TimedModal />
       <Container>
         <Box p='2' opacity='0' />
         <Box display={{ md: 'flex' }}>
