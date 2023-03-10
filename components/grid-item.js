@@ -51,6 +51,8 @@ export const PostGridItem = ({ children, id, title, thumbnail }) => (
           alt={title}
           className='grid-item-thumbnail'
           placeholder='blur'
+          width={250}
+          height={250}
         />
         <LinkOverlay href={`/posts/${id}`}>
           <Text mt={2} fontSize={20}>
