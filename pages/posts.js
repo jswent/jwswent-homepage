@@ -6,6 +6,8 @@ import { PostGridItem } from '../components/grid-item'
 import thumbZSH from '../public/images/works/zsh_eyecatch.png'
 import thumbTailwind from '../public/images/posts/tailwind-setup/tailwind_thumb.jpg'
 import thumbChatGPT from '../public/images/posts/chatgpt-1/ChatGPT_logo.png'
+import thumbLearnsight from '../public/images/posts/learnsight/logo.png'
+import thumbFirebase from '../public/images/posts/firebase-setup/firebase_logo.jpg'
 
 const Posts = () => (
   <Layout title='Posts'>
@@ -15,6 +17,16 @@ const Posts = () => (
       </Heading>
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <PostGridItem 
+            id='firebase-setup'
+            title='How to Setup Firebase with React + Next.js'
+            thumbnail={thumbFirebase}
+          />
+          <PostGridItem 
+            id='learnsight'
+            title='Starting a New Chapter...'
+            thumbnail={thumbLearnsight}
+          />
           <PostGridItem 
             id='chatgpt-1'
             title='Why Everyone is Talking About ChatGPT'
