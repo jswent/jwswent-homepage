@@ -8,6 +8,7 @@ import thumbTailwind from '../public/images/posts/tailwind-setup/tailwind_thumb.
 import thumbChatGPT from '../public/images/posts/chatgpt-1/ChatGPT_logo.png'
 import thumbLearnsight from '../public/images/posts/learnsight/logo.png'
 import thumbFirebase from '../public/images/posts/firebase-setup/firebase_logo.jpg'
+import thumbGPT4 from '../public/images/posts/gpt-4-release/cover.png'
 
 const Posts = () => (
   <Layout title='Posts'>
@@ -17,6 +18,11 @@ const Posts = () => (
       </Heading>
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <PostGridItem 
+            id='gpt-4-release'
+            title='What GPT-4 Means for the Future of AI'
+            thumbnail={thumbGPT4}
+          />
           <PostGridItem 
             id='firebase-setup'
             title='How to Setup Firebase with React + Next.js'
