@@ -13,7 +13,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import Experience from '../components/experience'
 import Layout from '../components/layouts/article'
 import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 import TimedModal from '../components/timedmodal'
@@ -101,36 +101,7 @@ const Page = () => {
           <Heading as='h3' variant='section-title'>
             Bio
           </Heading>
-          <BioSection>
-            <BioYear>2002</BioYear>
-            Born in Boston, Massachusetts.
-          </BioSection>
-          <BioSection>
-            <BioYear>2021</BioYear>
-            Graduated High School at Thayer Academy in Braintree, Massachusetts
-          </BioSection>
-          <BioSection>
-            <BioYear>2021 to 2022</BioYear>
-            Internship at Transocean Ltd.
-          </BioSection>
-          <BioSection>
-            <BioYear>2021 to present</BioYear>
-            Studying Computer Science at the University of St. Andrews in
-            Scotland
-          </BioSection>
-          <BioSection>
-            <BioYear>2022 to 2022</BioYear>
-            Research project in epidemic modelling with transfer learning at the
-            University of St. Andrews
-          </BioSection>
-          <BioSection>
-            <BioYear>2022 to present</BioYear>
-            Founded Swent Consulting
-          </BioSection>
-          <BioSection>
-            <BioYear>2023 to present</BioYear>
-            VP Engineering at Learnsight
-          </BioSection>
+          <Experience />
         </Section>
 
         <Section delay={0.4}>
