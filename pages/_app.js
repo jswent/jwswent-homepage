@@ -5,10 +5,12 @@ import theme from '../lib/theme'
 import { AnimatePresence } from 'framer-motion'
 import '../public/styles/tailwind.css'
 import TimedModal from '../components/timedmodal'
+import Analytics from '../components/analytics'
 
 const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
+      <Analytics />
       <Fonts />
       <TimedModal />
       <Layout router={router}>
