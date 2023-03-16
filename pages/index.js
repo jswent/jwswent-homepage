@@ -16,12 +16,10 @@ import Paragraph from '../components/paragraph'
 import Experience from '../components/experience'
 import Layout from '../components/layouts/article'
 import { IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
-import TimedModal from '../components/timedmodal'
 
 const Page = () => {
   return (
     <Layout>
-      <TimedModal />
       <Container>
         <Box p='2' opacity='0' />
         <Box display={{ md: 'flex' }}>
