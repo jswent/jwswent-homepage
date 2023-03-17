@@ -7,6 +7,10 @@ import '../public/styles/tailwind.css'
 import TimedModal from '../components/timedmodal'
 import Analytics from '../components/analytics'
 
+// TODO: fix timeline CSS being unloaded preemptively
+// without loading globally
+import 'react-vertical-timeline-component/style.min.css'
+
 const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>

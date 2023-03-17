@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement
 } from 'react-vertical-timeline-component'
 
-import 'react-vertical-timeline-component/style.min.css'
 import { useColorModeValue } from '@chakra-ui/react'
 
 import thayer from '../public/images/logos/thayer.png'
