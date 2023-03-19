@@ -10,10 +10,12 @@ import {
 const TimedModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const handleOpen = () => {
+  const handleOpen = (shouldDisplay) => {
     const timer = setTimeout(() => {
-      onOpen()
-      setSessionDisplayed(true)
+      if (shouldDisplay) {
+        onOpen()
+        setSessionDisplayed(true)
+      }
     }, 4000)
     return () => clearTimeout(timer)
   }
@@ -21,7 +23,8 @@ const TimedModal = () => {
   useEffect(() => {
     const registered = getRegistered()
     const session = getSessionDisplayed()
-    !(registered || session) && handleOpen()
+    const shouldDisplay = registered || session
+    !shouldDisplay && handleOpen(shouldDisplay)
   }, [])
 
   return <NewsModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
