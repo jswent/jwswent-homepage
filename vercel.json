@@ -1,18 +1,6 @@
 {
   "functions": {
-    "api/newsletterRegistration.js": {
-      "includeFiles": "/var/task/.node-persist/**"
-    },
-    "api/registerEmailOtp.js": {
-      "includeFiles": "/var/task/.node-persist/**"
-    },
-    "api/requestSubscriptionStatus.js": {
-      "includeFiles": "/var/task/.node-persist/**"
-    },
-    "api/requestVerification.js": {
-      "includeFiles": "/var/task/.node-persist/**"
-    },
-    "api/unregisterEmailFromNewsletter.js": {
+    "pages/api/**/*.js": {
       "includeFiles": "/var/task/.node-persist/**"
     }
   }
