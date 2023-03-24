@@ -1,13 +1,13 @@
 const nodemailer = require('nodemailer')
-import generateEmailTemplate from './emailTemplate';
+import generateEmailTemplate from './emailTemplate'
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "service@jwswent.com",
-    pass: process.env.SERVICE_MAIL_PASSWORD,
-  },
-});
+    user: 'service@jwswent.com',
+    pass: process.env.SERVICE_MAIL_PASSWORD
+  }
+})
 
 export async function sendEmail(email, code) {
   const emailContent = generateEmailTemplate(code)
@@ -15,7 +15,7 @@ export async function sendEmail(email, code) {
     from: 'James Swent <no-reply@jwswent.com>',
     to: email,
     subject: 'Email Verification',
-    html: emailContent,
+    html: emailContent
   }
 
   return new Promise((resolve, reject) => {
@@ -24,7 +24,7 @@ export async function sendEmail(email, code) {
         console.error(err)
         reject(err)
       } else {
-        console.log("Email sent to ", email);
+        console.log('Email sent to ', email)
         resolve(info)
       }
     })
