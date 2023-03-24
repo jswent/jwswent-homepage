@@ -130,6 +130,9 @@ const Navbar = props => {
                   <MenuItem as={Link} onClick={handleOpenModal}>
                     Subscribe
                   </MenuItem>
+                  <NextLink href='/manage' passHref>
+                    <MenuItem as={Link}>Manage</MenuItem>
+                  </NextLink>
                   <MenuItem
                     as={Link}
                     href='https://github.com/jswent/jwswent-homepage'

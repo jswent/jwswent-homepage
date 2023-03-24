@@ -1,7 +1,7 @@
-import { db } from '../../components/firebase'
+import { db } from '../../config/firebaseConfig'
 import { Timestamp } from 'firebase-admin/firestore'
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const body = req.body
 
   if (!body.email) {
@@ -10,19 +10,43 @@ export default function handler(req, res) {
 
   const email = body.email
 
-  return new Promise((resolve, reject) => {
-    db.collection('newsletter-list').add({
-      email: email,
-      createdAt: Timestamp.now()
-    }).then((response) => {
-      console.log("Data registered with id: ", response.id)
-      res.status(200).json({ data: 'success' })
-      resolve()
+  const query = await db.collection('newsletter-list').where('email', '==', email).get()
+  const docs = query.docs;
+
+  if (query.empty) {
+    return new Promise((resolve, reject) => {
+      db.collection('newsletter-list').add({
+        email: email,
+        subscribed: true,
+        emailVerified: false,
+        createdAt: Timestamp.now(),
+        updatedAt: Timestamp.now()
+      }).then((response) => {
+        console.log("Data registered with id: ", response.id)
+        res.status(200).json({ data: 'success' })
+        resolve()
+      })
+        .catch((error) => {
+          console.log("Error registering data: ", error)
+          res.status(400).json({ data: 'rejected' })
+          resolve()
+        })
     })
-    .catch((error) => {
-      console.log("Error registering data: ", error)
-      res.status(400).json({ data: 'rejected' })
-      resolve()
+  } else {
+    return new Promise((resolve, reject) => {
+      db.collection('newsletter-list').doc(docs[0].id).update({
+        subscribed: true,
+        updatedAt: Timestamp.now()
+      }).then((response) => {
+        console.log("Data updated with id: ", docs[0].id)
+        res.status(200).json({ data: 'success' })
+        resolve()
+      })
+        .catch((error) => {
+          console.log("Error updating data: ", error)
+          res.status(400).json({ data: 'rejected' })
+          resolve()
+        })
     })
-  })
+  }
 }

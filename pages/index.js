@@ -8,7 +8,7 @@ import {
   List,
   ListItem,
   Link,
-  Icon,
+  Icon
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Section from '../components/section'
@@ -147,6 +147,16 @@ const Page = () => {
               </Link>
             </ListItem>
           </List>
+        </Section>
+
+        <Section delay={0.5}>
+          <Heading as='h3' variant='section-title'>
+            Newsletter
+          </Heading>
+          <Paragraph>
+            If you would like to unsubscribe from my newsletter, you can manage
+            the status of your subscription <Link href='/manage'>here</Link>.
+          </Paragraph>
         </Section>
       </Container>
     </Layout>
