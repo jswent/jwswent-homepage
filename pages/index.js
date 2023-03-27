@@ -155,7 +155,11 @@ const Page = () => {
           </Heading>
           <Paragraph>
             If you would like to unsubscribe from my newsletter, you can manage
-            the status of your subscription <Link href='/manage'>here</Link>.
+            the status of your subscription{' '}
+            <NextLink href='/manage'>
+              <Link>here</Link>
+            </NextLink>
+            .
           </Paragraph>
         </Section>
       </Container>

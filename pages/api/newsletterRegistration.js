@@ -19,14 +19,14 @@ export default async function handler(req, res) {
         email: email,
         subscribed: true,
         emailVerified: false,
+        origin: req.headers.origin,
         createdAt: Timestamp.now(),
         updatedAt: Timestamp.now()
       }).then((response) => {
         console.log("Data registered with id: ", response.id)
         res.status(200).json({ data: 'success' })
         resolve()
-      })
-        .catch((error) => {
+      }).catch((error) => {
           console.log("Error registering data: ", error)
           res.status(400).json({ data: 'rejected' })
           resolve()
@@ -36,13 +36,13 @@ export default async function handler(req, res) {
     return new Promise((resolve, reject) => {
       db.collection('newsletter-list').doc(docs[0].id).update({
         subscribed: true,
+        origin: req.headers.origin,
         updatedAt: Timestamp.now()
       }).then((response) => {
         console.log("Data updated with id: ", docs[0].id)
         res.status(200).json({ data: 'success' })
         resolve()
-      })
-        .catch((error) => {
+      }).catch((error) => {
           console.log("Error updating data: ", error)
           res.status(400).json({ data: 'rejected' })
           resolve()

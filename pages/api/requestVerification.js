@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 }
 
 async function getOtp(email) {
-  await storage.init({ dir:'/tmp/node-persist', logging: true, ttl: 600000 })
+  await storage.init({ dir: '/tmp/node-persist', logging: true, ttl: 600000 })
   let storageOtp = await storage.getItem(email)
   console.log(storageOtp)
 }
