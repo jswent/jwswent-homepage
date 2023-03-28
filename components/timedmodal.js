@@ -10,21 +10,22 @@ import {
 const TimedModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const handleOpen = (shouldDisplay) => {
-    const timer = setTimeout(() => {
-      if (shouldDisplay) {
+  const shouldDisplayAfterTime = new Promise(resolve => {
+    setTimeout(() => {
+      const registered = getRegistered()
+      const session = getSessionDisplayed()
+      const shouldDisplay = registered || session
+      resolve(shouldDisplay)
+    }, 4000)
+  })
+
+  useEffect(() => {
+    shouldDisplayAfterTime.then(shouldDisplay => {
+      if (!shouldDisplay) {
         onOpen()
         setSessionDisplayed(true)
       }
-    }, 4000)
-    return () => clearTimeout(timer)
-  }
-
-  useEffect(() => {
-    const registered = getRegistered()
-    const session = getSessionDisplayed()
-    const shouldDisplay = registered || session
-    !shouldDisplay && handleOpen(shouldDisplay)
+    })
   }, [])
 
   return <NewsModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
