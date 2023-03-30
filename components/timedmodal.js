@@ -12,10 +12,12 @@ const TimedModal = () => {
 
   const shouldDisplayAfterTime = new Promise(resolve => {
     setTimeout(() => {
-      const registered = getRegistered()
-      const session = getSessionDisplayed()
-      const shouldDisplay = registered || session
-      resolve(shouldDisplay)
+      if (typeof window !== 'undefined') {
+        const registered = getRegistered()
+        const session = getSessionDisplayed()
+        const shouldDisplay = registered || session
+        resolve(shouldDisplay)
+      }
     }, 4000)
   })
 
