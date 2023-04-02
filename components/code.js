@@ -1,6 +1,14 @@
 import { Code, Box, useColorModeValue } from '@chakra-ui/react'
 
-const CodeBlock = ({ children }) => {
+export function InlineCode({ children }) {
+  return (
+    <Code className='indent-0'>
+      {children}
+    </Code>
+  )
+}
+
+const CodeBlock = ({ className, children }) => {
   return (
     <Box
       sx={{
@@ -11,6 +19,7 @@ const CodeBlock = ({ children }) => {
       borderRadius='lg'
       bg={useColorModeValue('codeLight', 'codeDark')}
       overflowX='scroll'
+      className={className}
     >
       <Code m='4px' display='block' whiteSpace='pre' bg='transparent'>
         {children}
