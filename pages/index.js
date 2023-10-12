@@ -29,7 +29,7 @@ const Page = () => {
             </Heading>
 
             <Heading as='h3' size='md'>
-              VP Engineering at Learnsight
+              Founder & CEO of Swent Consulting
             </Heading>
           </Box>
           <Box
@@ -56,12 +56,13 @@ const Page = () => {
             Work
           </Heading>
           <Paragraph>
-            I&apos;m currently working full-time as VP of Engineering at&nbsp;
-            <Link href='https://www.learnsight.io'>Learnsight</Link>, a startup
-            in the MIT Sandbox program. I&apos;m also a second-year at the
-            University of St. Andrews. I get excited about Computer Science,
-            Open-Source software, and anything tech-related. I&apos;m passionate
-            about building new ventures, exploring entrepreneurship, and
+            I&apos;m currently working full-time at MIT&apos;s&nbsp;
+            <Link href="https://sandbox.mit.edu">Sandbox Innovation Fund Program</Link>.
+            I also run my own technical consulting firm&nbsp;
+            <Link href="https://www.swent-consulting.com">Swent Consulting</Link>.
+            I get excited about Computer Science, Open-Source software,
+            and anything tech-related. I&apos;m passionate about
+            building new ventures, exploring entrepreneurship, and
             leveraging my tech insights to enhance legacy industries.
           </Paragraph>
           <Box align='center' my={4}>
@@ -75,21 +76,20 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as='h3' variant='section-title'>
-            Consulting
+            Digitall Uplift
           </Heading>
           <Paragraph>
-            I&apos;m also the founder of Swent Consulting, a web design and IT
-            consulting agency that offers tailored services to primarily small
-            businesses and charitable organizations. This agency is focused on
-            making high-quality, modern web services and IT infrastructure
-            available for affordable prices. Click the button below to explore
-            the Swent Consulting website and reach out to get a personalized
-            quote in less than 24 hours.
+            I&apos;m also the founder of Digitall Uplift, an accelerator for
+            social ventures which, instead of providing dilutive funding, provides
+            expert technical resources and advising through a network of developers
+            and mentors wishing to volunteer their time. If you&apos;re interested in
+            volunteering or applying to our cohort, click the button below
+            to find out more!
           </Paragraph>
           <Box align='center' my={4}>
-            <NextLink href='https://www.swent-consulting.com'>
+            <NextLink href='https://www.digitalluplift.org'>
               <Button rightIcon={<ChevronRightIcon />} colorScheme='teal'>
-                Swent Consulting
+                Digitall Uplift
               </Button>
             </NextLink>
           </Box>

@@ -62,8 +62,8 @@ const experiences = [
     iconBg: '#fff',
     date: 'September 2022 - present',
     points: [
-      'Provide tailored services to primarily small businesses and charitable organizations',
-      'Services include: UI/UX Design, Web Development, Organization Management, and more...'
+      'Formalized years of independent and corporate software development into a full-service digital consulting firm.',
+      'Primary services in software architecture and workflow consulting, product development, and more...'
     ]
   },
   {
@@ -71,7 +71,7 @@ const experiences = [
     company_name: 'Learnsight',
     icon: learnsight,
     iconBg: '#fff',
-    date: 'January 2023 - present',
+    date: 'January 2023 - April 2023',
     points: [
       'Conducted primary market research to identify unmet needs in the Educational Technology sector and deliver a new-age collaborative learning platform',
       'Designed a product plan and mock-up and oversaw development to deliver an MVP to early adopters',
